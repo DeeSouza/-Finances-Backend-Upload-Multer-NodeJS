@@ -30,6 +30,13 @@ export default class CreateTransactions1587577757917
             isNullable: false,
           },
           {
+            name: 'value',
+            type: 'decimal',
+            precision: 10,
+            scale: 2,
+            isNullable: false,
+          },
+          {
             name: 'category_id',
             type: 'uuid',
             isNullable: false,
