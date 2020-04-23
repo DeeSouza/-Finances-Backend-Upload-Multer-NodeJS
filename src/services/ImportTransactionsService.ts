@@ -29,8 +29,6 @@ class ImportTransactionsService {
 
     const parseStream = csvParse({
       from_line: 2,
-      ltrim: true,
-      rtrim: true,
     });
 
     const parseCSV = readCSVStream.pipe(parseStream);
@@ -39,6 +37,8 @@ class ImportTransactionsService {
       const [title, type, value, category] = line.map((cell: string) =>
         cell.trim(),
       );
+
+      if (!title || !type || !value) return;
 
       categories.push(category);
 
