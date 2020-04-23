@@ -58,7 +58,6 @@ class ImportTransactionsService {
       where: {
         title: In(categories),
       },
-      select: ['title'],
     });
 
     const existingCategoriesTitles = existingCategories.map(
